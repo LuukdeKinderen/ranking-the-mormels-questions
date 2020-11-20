@@ -27,4 +27,23 @@ public class QuestionController {
         return question;
     }
 
+    @GetMapping("/random/{count}")
+    public Question[] GetQuestions(@PathVariable("count") Integer count) {
+        //TODO: get from db
+        Question[] questions = new Question[count];
+
+        for (int i =0; i<count; i++){
+            Question question = new Question(
+                    i,
+                    "Wie is de langste speler?",
+                    "Lange Jan, drink maar {drinkcount} slokken daarboven",
+                    "Jij bent dan wel de kleinste, Maar als je {drinkcount} sokken drinkt ben je wel een grote speler"
+            );
+            questions[i] = question;
+        }
+
+
+        return questions;
+    }
+
 }
