@@ -41,8 +41,6 @@ public class QuestionController {
             );
             questions[i] = question;
         }
-
-
         return questions;
     }
 
