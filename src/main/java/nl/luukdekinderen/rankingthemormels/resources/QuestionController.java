@@ -6,10 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
@@ -21,8 +17,8 @@ public class QuestionController {
         Question question = new Question(
                 questionId,
                 "Wie is de langste speler?",
-                "Lange Jan, drink maar {drinkcount} slokken daarboven",
-                "Jij bent dan wel de kleinste, Maar als je {drinkcount} sokken drinkt ben je wel een grote speler"
+                "lange Jan, drink maar %d slokken daarboven!",
+                "jij bent dan wel de kleinste, maar als je %d sokken drinkt ben je wel een grote speler!"
         );
         return question;
     }
@@ -36,8 +32,8 @@ public class QuestionController {
             Question question = new Question(
                     i,
                     "Wie is de langste speler?",
-                    "Lange Jan, drink maar {drinkcount} slokken daarboven",
-                    "Jij bent dan wel de kleinste, Maar als je {drinkcount} sokken drinkt ben je wel een grote speler"
+                    "lange Jan, drink maar %d slokken daarboven",
+                    "jij bent dan wel de kleinste, Maar als je %d sokken drinkt ben je wel een grote speler"
             );
             questions[i] = question;
         }

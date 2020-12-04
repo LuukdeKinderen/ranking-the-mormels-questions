@@ -3,7 +3,4 @@ server:
 spring:
   application:
     name: ranking-the-mormels-questions
-eureka:
-  client:
-    service-url:
-      defaultZone: https://ranking-the-mormels-discovery.herokuapp.com/eureka/
+

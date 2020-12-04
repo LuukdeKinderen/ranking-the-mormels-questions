@@ -18,20 +18,5 @@ public class Question {
         this.lastBestAnnotation = lastBestAnnotation;
     }
 
-    public Integer getQuestionId() {
-        return questionId;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getFirstPersAnnotation() {
-        return firstPersAnnotation;
-    }
-
-    public String getLastBestAnnotation() {
-        return lastBestAnnotation;
-    }
 }
 
