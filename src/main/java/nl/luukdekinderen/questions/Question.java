@@ -1,33 +1,39 @@
-package nl.luukdekinderen.questions.models;
+package nl.luukdekinderen.questions;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Question {
 
-    private Integer questionId;
+    @Id
+    @GeneratedValue(generator = "uuid")
+    private String id;
     private String question;
-    private String firstPersAnnotation;
+    private String firstAnnotation;
     private String lastBestAnnotation;
 
     public Question() {
 
     }
 
-    public Question(Integer questionId, String question, String firstPersAnnotation, String lastBestAnnotation) {
-        this.questionId = questionId;
+    public Question(String question, String firstAnnotation, String lastBestAnnotation) {
         this.question = question;
-        this.firstPersAnnotation = firstPersAnnotation;
+        this.firstAnnotation = firstAnnotation;
         this.lastBestAnnotation = lastBestAnnotation;
     }
 
-    public Integer getQuestionId() {
-        return questionId;
+    public String getId() {
+        return id;
     }
 
     public String getQuestion() {
         return question;
     }
 
-    public String getFirstPersAnnotation() {
-        return firstPersAnnotation;
+    public String getFirstAnnotation() {
+        return firstAnnotation;
     }
 
     public String getLastBestAnnotation() {
