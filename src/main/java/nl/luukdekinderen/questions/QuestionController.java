@@ -1,6 +1,6 @@
-package nl.luukdekinderen.rankingthemormels.resources;
+package nl.luukdekinderen.questions.resources;
 
-import nl.luukdekinderen.rankingthemormels.models.Question;
+import nl.luukdekinderen.questions.models.Question;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

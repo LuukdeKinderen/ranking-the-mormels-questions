@@ -1,4 +1,4 @@
-package nl.luukdekinderen.rankingthemormels.models;
+package nl.luukdekinderen.questions.models;
 
 public class Question {
 
