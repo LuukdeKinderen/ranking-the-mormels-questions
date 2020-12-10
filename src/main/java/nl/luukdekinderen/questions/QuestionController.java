@@ -15,53 +15,32 @@ public class QuestionController {
     private QuestionService questionService;
 
     @GetMapping("/{questionId}")
-    public Question GetQuestion(@PathVariable("questionId") String questionId) {
-        questionService.addQuestion(new Question("test","test","test"));
+    public Question GetQuestion(@PathVariable("questionId") Long questionId) {
         return questionService.getQuestion(questionId);
-        //TODO: get from db
-
-/*        Question question = new Question(
-                "Wie is de langste speler?",
-                "lange Jan, drink maar %d slokken daarboven!",
-                "jij bent dan wel de kleinste, maar als je %d sokken drinkt ben je wel een grote speler!"
-        );
-        return question;*/
     }
 
-    @GetMapping("/count")
-    public long getCount(){
-
-        return questionService.count();
+    @GetMapping("/all")
+    public List<Question> GetAllQuestions(){
+        return questionService.getAllQuestions();
     }
 
     @GetMapping("/random/{count}")
-    public Question[] GetQuestions(@PathVariable("count") Integer count) {
-        //TODO: get from db
+    public List<Question> GetQuestions(@PathVariable("count") Integer count) {
         return questionService.getRandom(count);
-/*         Question[] questions = new Question[count];
-
-       for (int i =0; i<count; i++){
-            Question question = new Question(
-                    "Wie is de langste speler?",
-                    "lange Jan, drink maar %d slokken daarboven",
-                    "jij bent dan wel de kleinste, Maar als je %d sokken drinkt ben je wel een grote speler"
-            );
-            questions[i] = question;
-        }
-        return questions;*/
     }
 
-    @PostMapping()
+    @PostMapping
     public void addQuestion(@RequestBody Question question) {
         questionService.addQuestion(question);
     }
 
-    @PutMapping()
+
+    @PutMapping
     public void updateQuestion(@RequestBody Question question) {
         questionService.updateQuestion(question);
     }
 
-    @DeleteMapping()
+    @DeleteMapping
     public void deleteQuestion(@RequestBody Question question){
         questionService.deleteQuestion(question);
     }

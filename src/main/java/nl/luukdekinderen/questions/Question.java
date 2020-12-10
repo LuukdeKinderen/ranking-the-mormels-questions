@@ -8,8 +8,8 @@ import javax.persistence.Id;
 public class Question {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    private String id;
+    @GeneratedValue
+    private Long id;
     private String question;
     private String firstAnnotation;
     private String lastBestAnnotation;
@@ -24,7 +24,7 @@ public class Question {
         this.lastBestAnnotation = lastBestAnnotation;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
