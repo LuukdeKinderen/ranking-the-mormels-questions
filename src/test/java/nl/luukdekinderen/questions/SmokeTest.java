@@ -1,9 +1,8 @@
-package nl.luukdekinderen.rankingthemormels;
+package nl.luukdekinderen.questions;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import nl.luukdekinderen.rankingthemormels.resources.QuestionController;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
