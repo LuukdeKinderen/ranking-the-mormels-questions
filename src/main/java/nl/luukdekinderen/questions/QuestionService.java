@@ -5,10 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class QuestionService {
@@ -23,7 +20,11 @@ public class QuestionService {
         return questions;
     }
 
-    public Question getQuestion(Long id) {
+    public Question getQuestion(Long id) throws Exception  {
+        Optional<Question> question = questionRepository.findById(id);
+
+        question.orElseThrow(() -> new Exception("Not found with id: " + id));
+
         return questionRepository.findById(id).get();
     }
 
@@ -45,18 +46,18 @@ public class QuestionService {
             questions.add(q);
         }
 
-        return  questions;
+        return questions;
     }
 
-    private List<Integer> randomRows(Long tableSize, Integer count){
+    private List<Integer> randomRows(Long tableSize, Integer count) {
         ArrayList<Integer> tableRows = new ArrayList<Integer>();
-        for (int i=1; i<tableSize; i++) {
+        for (int i = 1; i < tableSize; i++) {
             tableRows.add(i);
         }
         Collections.shuffle(tableRows);
 
         ArrayList<Integer> randomTableRows = new ArrayList<Integer>();
-        for (int i=0; i<count; i++) {
+        for (int i = 0; i < count; i++) {
             randomTableRows.add(tableRows.get(i));
         }
         return randomTableRows;

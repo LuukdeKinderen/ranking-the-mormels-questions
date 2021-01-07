@@ -1,39 +1,26 @@
-package nl.luukdekinderen.questions;
+package nl.luukdekinderen.questions.controllers;
 
 import nl.luukdekinderen.questions.Question;
+import nl.luukdekinderen.questions.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
-@RequestMapping("/question")
-public class QuestionController {
+@RequestMapping("/cud")
+public class CudController {
 
     @Autowired
     private QuestionService questionService;
 
-    @GetMapping("/{questionId}")
-    public Question GetQuestion(@PathVariable("questionId") Long questionId) {
-        return questionService.getQuestion(questionId);
-    }
-
-    @GetMapping("/all")
-    public List<Question> GetAllQuestions(){
-        return questionService.getAllQuestions();
-    }
-
-    @GetMapping("/random/{count}")
-    public List<Question> GetQuestions(@PathVariable("count") Integer count) {
-        return questionService.getRandom(count);
+    @GetMapping("/test")
+    public String loggedIn(){
+        return "test";
     }
 
     @PostMapping
     public void addQuestion(@RequestBody Question question) {
         questionService.addQuestion(question);
     }
-
 
     @PutMapping
     public void updateQuestion(@RequestBody Question question) {
@@ -44,5 +31,4 @@ public class QuestionController {
     public void deleteQuestion(@RequestBody Question question){
         questionService.deleteQuestion(question);
     }
-
 }
