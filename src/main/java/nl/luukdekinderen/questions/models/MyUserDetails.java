@@ -1,4 +1,4 @@
-package nl.luukdekinderen.questions;
+package nl.luukdekinderen.questions.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

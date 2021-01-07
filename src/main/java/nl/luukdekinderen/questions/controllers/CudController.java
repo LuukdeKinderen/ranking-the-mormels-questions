@@ -1,7 +1,7 @@
 package nl.luukdekinderen.questions.controllers;
 
-import nl.luukdekinderen.questions.Question;
-import nl.luukdekinderen.questions.QuestionService;
+import nl.luukdekinderen.questions.models.Question;
+import nl.luukdekinderen.questions.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

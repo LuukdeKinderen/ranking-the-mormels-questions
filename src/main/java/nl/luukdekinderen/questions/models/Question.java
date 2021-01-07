@@ -1,4 +1,4 @@
-package nl.luukdekinderen.questions;
+package nl.luukdekinderen.questions.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
