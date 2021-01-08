@@ -14,6 +14,6 @@ spring:
     generate-ddl: true
 secret:
   key: "SECRET_LOCAL_KEY"
-JDBC_DATABASE_URL: jdbc:mysql://localhost:3306/ranking-the-mormels
-JDBC_DATABASE_USERNAME: root
-JDBC_DATABASE_PASSWORD: admin
+JDBC_DATABASE_URL:
+JDBC_DATABASE_USERNAME:
+JDBC_DATABASE_PASSWORD: 
