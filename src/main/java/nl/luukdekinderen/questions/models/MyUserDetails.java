@@ -11,9 +11,11 @@ import java.util.Collection;
 public class MyUserDetails implements UserDetails {
 
     private String userName;
+    private String password;
 
-    public MyUserDetails(String userName) {
-        this.userName = userName;
+    public MyUserDetails(User user){
+        this.userName = user.getUserName();
+        this.password = user.getPassword();
     }
 
     public MyUserDetails() {
@@ -26,7 +28,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "pass";
+        return password;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package nl.luukdekinderen.questions.services;
 
-import nl.luukdekinderen.questions.QuestionRepository;
+import nl.luukdekinderen.questions.repositories.QuestionRepository;
 import nl.luukdekinderen.questions.models.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
