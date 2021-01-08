@@ -1,5 +1,6 @@
-package nl.luukdekinderen.questions;
+package nl.luukdekinderen.questions.repositories;
 
+import nl.luukdekinderen.questions.models.Question;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
