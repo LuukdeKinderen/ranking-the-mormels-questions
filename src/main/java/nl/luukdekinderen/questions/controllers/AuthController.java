@@ -29,17 +29,17 @@ public class AuthController {
     @PostMapping("/auth")
     public ResponseEntity<?> createAuthToken(@RequestBody AuthRequest authRequest) throws Exception {
         try {
-           authenticationManager.authenticate(
-                   new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
-           );
-       }catch (BadCredentialsException e){
-           throw  new Exception("Incorrect username or password");
-       }
-       final UserDetails userDetails = userDetailsService
-               .loadUserByUsername(authRequest.getUsername());
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
+            );
+        } catch (BadCredentialsException e) {
+            throw new Exception("Incorrect username or password", e);
+        }
+        final UserDetails userDetails = userDetailsService
+                .loadUserByUsername(authRequest.getUsername());
 
-       final String jwt = jwtTokenUtil.generateToken(userDetails);
+        final String jwt = jwtTokenUtil.generateToken(userDetails);
 
-       return ResponseEntity.ok(new AuthResponse(jwt));
+        return ResponseEntity.ok(new AuthResponse(jwt));
     }
 }
