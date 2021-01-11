@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com")
+@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com/")
 @RequestMapping("/question")
 public class ReadController {
 

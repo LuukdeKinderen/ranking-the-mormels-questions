@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com")
+@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com/")
 public class AuthController {
 
     @Autowired
