@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com/")
+@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com'")
 @RequestMapping("/cud")
 public class CudController {
 
