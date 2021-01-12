@@ -11,7 +11,8 @@ import java.util.List;
 @CrossOrigin(origins = {
         "https://ranking-the-mormels-admin.herokuapp.com",
         "https://ranking-the-mormels-logic.herokuapp.com",
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "http://localhost:8080"
 })
 @RequestMapping("/question")
 public class ReadController {
