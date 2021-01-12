@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://ranking-the-mormels-admin.herokuapp.com")
+@CrossOrigin(origins = {
+        "https://ranking-the-mormels-admin.herokuapp.com",
+        "http://localhost:3000"
+})
 @RequestMapping("/cud")
 public class CudController {
 
     @Autowired
     private QuestionService questionService;
-
 
     @PostMapping
     public void addQuestion(@RequestBody Question question) {
@@ -25,7 +27,7 @@ public class CudController {
     }
 
     @DeleteMapping
-    public void deleteQuestion(@RequestBody Question question){
+    public void deleteQuestion(@RequestBody Question question) {
         questionService.deleteQuestion(question);
     }
 }

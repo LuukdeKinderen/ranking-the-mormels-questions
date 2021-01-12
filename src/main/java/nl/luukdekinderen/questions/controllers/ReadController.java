@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"https://ranking-the-mormels-admin.herokuapp.com","https://ranking-the-mormels-logic.herokuapp.com"} )
+@CrossOrigin(origins = {
+        "https://ranking-the-mormels-admin.herokuapp.com",
+        "https://ranking-the-mormels-logic.herokuapp.com",
+        "http://localhost:3000"
+})
 @RequestMapping("/question")
 public class ReadController {
 
@@ -19,7 +23,7 @@ public class ReadController {
     public Question GetQuestion(@PathVariable("questionId") Long questionId) throws Exception {
         try {
             return questionService.getQuestion(questionId);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             throw e;
         }
@@ -36,7 +40,7 @@ public class ReadController {
     }
 
     @ExceptionHandler
-    public void handleException(){
+    public void handleException() {
 
     }
 }
